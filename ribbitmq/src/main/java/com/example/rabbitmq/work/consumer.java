@@ -21,7 +21,7 @@ public class consumer {
         try {
             connection = connectionFactory.newConnection();
             channel = connection.createChannel();
-            final Channel finchannel=channel;
+            final Channel finchannel = channel;
 
             channel.basicQos(1);
 
@@ -33,7 +33,7 @@ public class consumer {
                             try {
                                 System.out.println("got message:" + new String(delivery.getBody()));
                                 TimeUnit.SECONDS.sleep(2);
-                                finchannel.basicAck(delivery.getEnvelope().getDeliveryTag(),false);
+                                finchannel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }

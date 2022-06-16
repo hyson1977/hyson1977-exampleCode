@@ -14,7 +14,7 @@ public class SampleController {
     @GetMapping("/list")
     public Map list() {
         Map result = new HashMap();
-        result.put("code",0);
+        result.put("code", 0);
         return result;
     }
 }

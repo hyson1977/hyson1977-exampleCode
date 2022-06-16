@@ -23,6 +23,7 @@ public class RabbitmqProviderApplicationTest {
     void contextLoads_sms() {
         orderService.makeOrder("sms");
     }
+
     @Test
     void contextLoads_email() {
         orderService.makeOrder("email");

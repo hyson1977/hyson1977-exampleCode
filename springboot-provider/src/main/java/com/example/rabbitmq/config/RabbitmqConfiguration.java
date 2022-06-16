@@ -24,23 +24,25 @@ public class RabbitmqConfiguration {
 */
 
     @Bean
-    public FanoutExchange fanoutExchange(){
-        return new FanoutExchange("fanout_order_exchange",true,false);
-    }
-    @Bean
-    public Queue emailQueue(){
-        return new Queue("email.fanout.queue",true);
+    public FanoutExchange fanoutExchange() {
+        return new FanoutExchange("fanout_order_exchange", true, false);
     }
 
     @Bean
-    public Queue smsQueue(){
-        return new Queue("sms.fanout.queue",true);
+    public Queue emailQueue() {
+        return new Queue("email.fanout.queue", true);
+    }
+
+    @Bean
+    public Queue smsQueue() {
+        return new Queue("sms.fanout.queue", true);
     }
 
     @Bean
     public Binding smsBinding() {
         return BindingBuilder.bind(smsQueue()).to(fanoutExchange());
     }
+
     @Bean
     public Binding emailBinding() {
         return BindingBuilder.bind(emailQueue()).to(fanoutExchange());

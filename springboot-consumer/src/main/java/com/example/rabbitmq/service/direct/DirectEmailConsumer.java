@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class DirectEmailConsumer {
     @RabbitHandler
-    public void reviceMessage(String message){
-        System.out.println("email:->"+message);
+    public void reviceMessage(String message) {
+        System.out.println("email:->" + message);
     }
 }

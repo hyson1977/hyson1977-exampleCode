@@ -25,9 +25,9 @@ public class Producer {
             String queueName = "queue1";
 
             String message = "Hello World!!!";
-            String exchangeName="fanout-exchange";
-            String routeKey="";
-            String type="fanout";
+            String exchangeName = "fanout-exchange";
+            String routeKey = "";
+            String type = "fanout";
             channel.basicPublish(exchangeName, routeKey, null, message.getBytes());
             System.out.println("message sent successful");
             channel.close();

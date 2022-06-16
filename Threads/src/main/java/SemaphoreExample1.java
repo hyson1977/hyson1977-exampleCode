@@ -3,7 +3,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 
 /**
- *
  * @author Snailclimb
  * @date 2018年9月30日
  * @Description: 需要一次性拿一个许可的情况

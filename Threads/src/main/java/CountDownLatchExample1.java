@@ -3,7 +3,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- *
  * @author SnailClimb
  * @date 2018年10月1日
  * @Description: CountDownLatch 使用方法示例

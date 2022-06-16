@@ -25,22 +25,24 @@ public class DirectRabbitmqConfiguration {
 
     @Bean
     public DirectExchange directExchange() {
-        return new DirectExchange("direct_order_exchange",true,false);
-    }
-    @Bean
-    public Queue directemailQueue(){
-        return new Queue("email.direct.queue",true);
+        return new DirectExchange("direct_order_exchange", true, false);
     }
 
     @Bean
-    public Queue directsmsQueue(){
-        return new Queue("sms.direct.queue",true);
+    public Queue directemailQueue() {
+        return new Queue("email.direct.queue", true);
+    }
+
+    @Bean
+    public Queue directsmsQueue() {
+        return new Queue("sms.direct.queue", true);
     }
 
     @Bean
     public Binding directsmsBinding() {
         return BindingBuilder.bind(directsmsQueue()).to(directExchange()).with("sms");
     }
+
     @Bean
     public Binding directemailBinding() {
         return BindingBuilder.bind(directemailQueue()).to(directExchange()).with("email");

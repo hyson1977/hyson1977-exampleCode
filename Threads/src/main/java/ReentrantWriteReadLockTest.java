@@ -5,32 +5,6 @@ public class ReentrantWriteReadLockTest {
     ReentrantReadWriteLock.ReadLock readLock = lock.readLock();
     ReentrantReadWriteLock.WriteLock writeLock = lock.writeLock();
 
-    public void read(){
-        try {
-            readLock.lock();
-            System.out.println("线程"+Thread.currentThread().getName()+"进入。。。");
-            Thread.sleep(3000);
-            System.out.println("线程"+Thread.currentThread().getName()+"退出。。。");
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }finally{
-            readLock.unlock();
-        }
-    }
-
-    public void write(){
-        try {
-            writeLock.lock();
-            System.out.println("线程"+Thread.currentThread().getName()+"进入。。。");
-            Thread.sleep(3000);
-            System.out.println("线程"+Thread.currentThread().getName()+"退出。。。");
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }finally{
-            writeLock.unlock();
-        }
-    }
-
     public static void main(String[] args) {
         final ReentrantWriteReadLockTest wr = new ReentrantWriteReadLockTest();
         Thread t1 = new Thread(new Runnable() {
@@ -58,5 +32,31 @@ public class ReentrantWriteReadLockTest {
         t2.start();
         //t3.start();
         //t4.start();
+    }
+
+    public void read() {
+        try {
+            readLock.lock();
+            System.out.println("线程" + Thread.currentThread().getName() + "进入。。。");
+            Thread.sleep(3000);
+            System.out.println("线程" + Thread.currentThread().getName() + "退出。。。");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            readLock.unlock();
+        }
+    }
+
+    public void write() {
+        try {
+            writeLock.lock();
+            System.out.println("线程" + Thread.currentThread().getName() + "进入。。。");
+            Thread.sleep(3000);
+            System.out.println("线程" + Thread.currentThread().getName() + "退出。。。");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            writeLock.unlock();
+        }
     }
 }

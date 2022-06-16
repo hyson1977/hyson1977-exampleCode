@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class DirectSmsConsumer {
 
     @RabbitHandler
-    public void reviceMessage(String message){
-        System.out.println("sms:->"+message);
+    public void reviceMessage(String message) {
+        System.out.println("sms:->" + message);
     }
 }

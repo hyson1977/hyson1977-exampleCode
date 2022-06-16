@@ -9,13 +9,13 @@ import java.io.IOException;
 
 public class Test1 {
     public static void main(String[] args) throws IOException {
-        SimpleMetadataReaderFactory simpleMetadataReaderFactory=new SimpleMetadataReaderFactory();
-        MetadataReader metadataReader=simpleMetadataReaderFactory.getMetadataReader("com.example.UserService");
-        ClassMetadata classMetadata=metadataReader.getClassMetadata();
+        SimpleMetadataReaderFactory simpleMetadataReaderFactory = new SimpleMetadataReaderFactory();
+        MetadataReader metadataReader = simpleMetadataReaderFactory.getMetadataReader("com.example.UserService");
+        ClassMetadata classMetadata = metadataReader.getClassMetadata();
         System.out.println(classMetadata.getClassName());
-        AnnotationMetadata annotationMetadata=metadataReader.getAnnotationMetadata();
+        AnnotationMetadata annotationMetadata = metadataReader.getAnnotationMetadata();
 
-        for(String annotationType:annotationMetadata.getAnnotationTypes() ){
+        for (String annotationType : annotationMetadata.getAnnotationTypes()) {
             System.out.println(annotationType);
         }
         //annotationMetadata.getAnnotatedMethods()

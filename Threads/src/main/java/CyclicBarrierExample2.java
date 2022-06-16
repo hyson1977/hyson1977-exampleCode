@@ -3,7 +3,6 @@ import java.util.Set;
 import java.util.concurrent.*;
 
 /**
- *
  * @author Snailclimb
  * @date 2018年10月1日
  * @Description: 测试 CyclicBarrier 类中带参数的 await() 方法
@@ -17,7 +16,7 @@ public class CyclicBarrierExample2 {
     public static void main(String[] args) throws InterruptedException {
         // 创建线程池
         ExecutorService threadPool = Executors.newFixedThreadPool(10);
-        Set set1=new HashSet();
+        Set set1 = new HashSet();
         for (int i = 0; i < threadCount; i++) {
             final int threadNum = i;
             Thread.sleep(1000);

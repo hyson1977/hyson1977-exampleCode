@@ -13,7 +13,7 @@ import java.util.Set;
 public class RabbitmqConsulerApplication {
 
     public static void main(String[] args) {
-        Set<String> set=new LinkedHashSet<>();
+        Set<String> set = new LinkedHashSet<>();
         SpringApplication.run(RabbitmqConsulerApplication.class, args);
     }
 

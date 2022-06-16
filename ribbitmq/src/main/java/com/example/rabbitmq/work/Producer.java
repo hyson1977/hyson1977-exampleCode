@@ -25,7 +25,7 @@ public class Producer {
             String queueName = "queue1";
 
             //channel.queueDeclare(queueName, false, false, false, null);
-            for (int i=1;i<=20;i++) {
+            for (int i = 1; i <= 20; i++) {
                 String message = "Hello World=" + i;
                 channel.basicPublish("", queueName, null, message.getBytes());
             }
